@@ -1,0 +1,11 @@
+{
+  "responseitem": [
+    {
+      "itemNo": 1,
+      "itemValue": "JSON ServerでダミーAPIを作成"
+    },
+    {
+      "itemNo": 2,
+      "itemValue": "Vue.jsで基本機能を実装"
+    }
+  ]

@@ -1,4 +1,4 @@
 export class ResponseItem {
-  itemNo: number;
-  itemValue: string;
+    resItemCode: string;
+    resItemName: string;
 }

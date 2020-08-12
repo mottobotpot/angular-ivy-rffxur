@@ -1,7 +1,7 @@
-import { ResponseItem } from './response-item';
+import { Response } from './response';
 
 export class IncidentInfo{
-  id: string;
-  title: string;
-  responseItems:  ResponseItem.itemNo[];
+  incidentCode: string;
+  incidentName: string;
+  responseItems: Response[];
 }

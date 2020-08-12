@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { IncidentInfo } from './incident-info';
-import { ResponseItem } from './resposnse-item';
+import { ResponseItem } from './response-item';
 
 @Injectable()
 export class ResponseItemService {

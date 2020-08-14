@@ -4,7 +4,7 @@ import { ResponseItem } from './app/response-item';
  
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    let incidentInfo :IncidentInfo[] = [
+    const incidentInfo = [
       {
         incidentCode:"I0001",
         incidentName:"【地震】青森県東方沖地震",
@@ -49,6 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
               { resItemCode: "RI0034", resItemName: "全壊" }
             ]
           }
+        ]
       }
     ];
     return {incidentInfo};

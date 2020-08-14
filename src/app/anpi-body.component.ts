@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
+import { IncidentInfoService } from './incident-info.service';
+import { IncidentInfo } from './incident-info'
 
 @Component({
   selector: 'anpi-body',
@@ -32,6 +34,9 @@ export class AnpiBodyComponent  {
       { label: '全壊', value: '3' }
   ];
 
+    IncidentInfoList;
+    incident: IncidentInfo[] = [];
+    incidentCode: string = 'I0001';
     userSafety = '';
     familySafety = '';
     workStatus = '';
@@ -39,7 +44,29 @@ export class AnpiBodyComponent  {
     comment = '';
     geo = '';
   
+  constructor(
+    private incidentInfoService: IncidentInfoService
+  ) {
+    this.IncidentInfoList = this.incidentInfoService.getIncidentInfoList();
+    console.log(this.IncidentInfoList);
+  }
 
+  ngOnInit() {
+    this.getIncidentInfo();
+    this.IncidentInfoList = this.incidentInfoService.getIncidentInfoList();
+    console.log(this.IncidentInfoList);
+
+  }
+
+  getIncidentInfo(): void {
+    this.incidentInfoService.getIncidentInfo()
+      .subscribe(incident => this.incident = incident);
+  }
+
+  getIncidentInfoList(): void {
+    this.incidentInfoService.getIncidentInfoList()
+      .subscribe(incident => this.incident = incident);
+  }
   onSubmit(){
     alert("");
   }
